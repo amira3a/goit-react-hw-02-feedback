@@ -58,7 +58,7 @@ const FeedbackWidget = () => {
 
   return (
     <div className="feedback-widget">
-      <Section title="Give feedback">
+      <Section title="Please leave feedback">
         <FeedbackOptions
           options={feedbackOptions}
           onLeaveFeedback={handleFeedback}
