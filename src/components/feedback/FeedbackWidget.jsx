@@ -1,7 +1,7 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import "./style.module.css"; // import the CSS file
 
-const Section = ({ title, children }) => {
+function Section  ({ title, children }) {
   return (
     <div>
       <h2>{title}</h2>
@@ -10,12 +10,12 @@ const Section = ({ title, children }) => {
   );
 };
 
-const Statistics = ({ good, neutral, bad }) => {
+function Statistics  ({ good, neutral, bad })  {
   const countTotalFeedback = () => {
     return good + neutral + bad;
   };
 
-  const countPositiveFeedbackPercentage = () => {
+  function countPositiveFeedbackPercentage  ()  {
     const total = countTotalFeedback();
     return total ? Math.round((good / total) * 100) : 0;
   };
@@ -31,7 +31,7 @@ const Statistics = ({ good, neutral, bad }) => {
   );
 };
 
-const FeedbackOptions = ({ options, onLeaveFeedback }) => {
+function FeedbackOptions ({ options, onLeaveFeedback }) {
   return (
     <div>
       {options.map((option) => (
@@ -43,14 +43,14 @@ const FeedbackOptions = ({ options, onLeaveFeedback }) => {
   );
 };
 
-const Notification = ({ message }) => {
+function Notification  ({ message })  {
   return <p>{message}</p>;
 };
 
-const FeedbackWidget = () => {
+function FeedbackWidget  ()  {
   const [state, setState] = useState({ good: 0, neutral: 0, bad: 0 });
 
-  const handleFeedback = (type) => {
+  function handleFeedback  (type)  {
     setState({ ...state, [type]: state[type] + 1 });
   };
 
