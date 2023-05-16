@@ -1,10 +1,10 @@
 import { useState } from "react";
-import "./style.module.css"; // import the CSS file
+import style from "./style.module.css"; // import the CSS file
 
 function Section  ({ title, children }) {
   return (
-    <div>
-      <h2>{title}</h2>
+    <div className={style.feedbackWidget}>
+      <h2 className={style.h2}>{title}</h2>
       {children}
     </div>
   );
